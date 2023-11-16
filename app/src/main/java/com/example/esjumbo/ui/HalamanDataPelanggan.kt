@@ -23,7 +23,8 @@ import com.example.esjumbo.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HalamanDataPelanggan(
-    onSubmitButtonClicked: (MutableList<String>) -> Unit){
+    onSubmitButtonClicked: (MutableList<String>) -> Unit,
+    onBackButtonCLicked: () -> Unit){
     var namaTxt by remember {
         mutableStateOf("")
     }
@@ -64,6 +65,10 @@ fun HalamanDataPelanggan(
             label = { Text(text = stringResource(id = R.string.telepon)) }
         )
         Spacer(modifier = Modifier.height(15.dp))
+
+        Button(onClick = {onBackButtonCLicked}) {
+            Text(text = stringResource(id = R.string.back_button))
+        }
 
         Button(onClick = { onSubmitButtonClicked(listData) }) {
             Text(text = stringResource(id = R.string.btn_submit))
