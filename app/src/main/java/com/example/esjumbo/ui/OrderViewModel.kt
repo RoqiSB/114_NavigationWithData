@@ -37,4 +37,5 @@ class OrderViewModel: ViewModel() {
 
         return NumberFormat.getNumberInstance().format(kalkulasiHarga)
     }
+
 }
